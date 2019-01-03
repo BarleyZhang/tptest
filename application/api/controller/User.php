@@ -20,48 +20,30 @@ class User extends Api
         return $this->return_msg(200,'',$list);
     }
 
-    /**
-     * 显示创建资源表单页.
-     *
-     * @return \think\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
-     * 保存新建的资源
-     *
+     * 保存用户信息
      * @param  \think\Request  $request
      * @return \think\Response
      */
     public function save(Request $request)
     {
-        //
+        //根据传入的数据,创建记录
+        $request = UserModel::create($request->param());
+        $this->return_msg(200,'',$request);
     }
 
     /**
-     * 显示指定的资源
-     *
+     * 根据id获取用户信息
      * @param  int  $id
      * @return \think\Response
      */
     public function read($id)
     {
-        //
+        //根据id查询单条记录
+        $this->return_msg(200,'',UserModel::get($id));
     }
 
-    /**
-     * 显示编辑资源表单页.
-     *
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * 保存更新的资源
@@ -72,17 +54,20 @@ class User extends Api
      */
     public function update(Request $request, $id)
     {
-        //
+        //根据id和数据更新用户数据
+        $result = UserModel::update($request->param(),['id'=>$id]);
+        return $this->return_msg(200,'',$result);
     }
 
     /**
-     * 删除指定资源
+     * 根据用户ID删除记录
      *
      * @param  int  $id
      * @return \think\Response
      */
     public function delete($id)
     {
-        //
+        //根据id删除一条记录
+        return $this->return_msg(200,'',UserModel::destroy($id));
     }
 }
