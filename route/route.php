@@ -17,4 +17,5 @@ Route::get('hello/:name', 'index/hello');
 
 return [
     'min/:code' => 'index/Url/index',
+    'user/:id' => 'api/User/read',
 ];
