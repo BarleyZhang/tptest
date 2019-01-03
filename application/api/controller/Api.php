@@ -10,12 +10,26 @@ namespace app\api\controller;
 
 use think\Controller;
 use think\Db;
-use think\Request;
+use think\facade\Request;
 
 class Api extends Controller
 {
     protected $timeout_second = 60;
     protected $sign_key = 'barley';
+
+    public function initialize()
+    {
+        parent::initialize();
+        //获取请求对象
+        $this->request = Request::init();
+        //是否开启API权限验证(测试用)
+        if (config('api_auth')) {
+            //验证时间戳是否超时
+            $this->check_time($this->request->only(['time']));
+            //验证签名是否正确
+            $this->check_sign($this->request->param());
+        }
+    }
 
     /**
      * @param int $code HTTP CODE
