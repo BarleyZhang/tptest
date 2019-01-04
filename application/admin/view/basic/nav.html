@@ -1,0 +1,49 @@
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+<!--Main header-->
+    <header class="main-header">
+        <a href="/admin" class="logo">
+            <!--读取后台管理站点名称的PC模式-->
+            <span class="logo-mini">{:config('SITES_NAME')}</span>
+            <span class="logo-lg">{:config('SITES_NAME')}</span>
+        </a>
+        <!--使用顶部导航-->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!--sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">Toggle nacigation</span>
+            </a>
+            <!--一级导航-->
+            <ul class="nav navbar-nav">
+                <li class=""><a href="">导航名</a></li>
+            </ul>
+            <!--登陆用户会话信息展示-->
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <!--user account menu-->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <!--显示用户名-->
+                            <span class="hidden-xs">测试用户名</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!--显示用户详细信息-->
+                            <li class="user-header" style="height: 100px;">
+                                <p>用户ID：测试ID</p>
+                                <p>用户名：测试用户名</p>
+                            </li>
+                            <!--y用户操作区-->
+                            <li class="user-footer">
+                                <div class="pull-left"></div>
+                                <div class="pull-right">
+                                    <a href="{:url('public_user/logout')}" class="btn btn-default btn-flat">注销登陆</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
+    </header>
