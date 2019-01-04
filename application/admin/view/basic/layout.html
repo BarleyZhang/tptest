@@ -1,0 +1,50 @@
+{include file='basic:header'}
+{include file='basic:menu'}
+{include file='basic:nav'}
+
+<div class="content-wrapper">
+    <!--header-->
+    <section class="content-header">
+        <h1>
+            {block name='page_header'}
+            <!-- 模板继承：页面标题-->
+            {/block}
+            <small>
+                {block name='page_header_small'}
+                <!-- 模板继承：页面副标题-->
+                {/block}
+            </small>
+        </h1>
+        <ol class="breadcrumb">
+            {block name='nav_tips'}
+            <!--模板继承：导航提示-->
+            {/block}
+        </ol>
+    </section>
+
+    <!--Main content-->
+    <section class="content container-fluid">
+        <!-- 定义全局成功提示信息框 -->
+        <div id="showSuccessTips" class="callout callout-success" style="display:none;">
+            <h4>成功！</h4>
+            <p></p>
+        </div>
+        <!-- 定义全局失败提示信息框 -->
+        <div id="showErrorTips" class="callout callout-danger" style="display:none;">
+            <h4>失败！</h4>
+            <p></p>
+        </div>
+        {block name='content'}
+        <!--模板继承：定义主体内容-->
+        {/block}
+    </section>
+</div>
+
+<!--content-wrapper-->
+<!--引入底部公共模板文件-->
+{include file='basic:footer' /}
+{block name='script'}
+<!--模板继承：定义Javascript脚本文件-->
+{/block}
+</body>
+</html>
