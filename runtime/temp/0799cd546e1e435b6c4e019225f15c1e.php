@@ -1,4 +1,7 @@
-<?php /*a:1:{s:49:"E:\DEV\tp5\application\index\view\news\index.html";i:1546498832;}*/ ?>
+<?php /*a:1:{s:49:"E:\DEV\tp5\application\index\view\news\index.html";i:1546586191;}*/ ?>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/adminlte.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
